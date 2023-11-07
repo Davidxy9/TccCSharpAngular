@@ -1,0 +1,22 @@
+.navbar-custom {
+  background-color: #1f2029;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #ffffff;
+}
+
+.active .nav-link {
+  color: #ffffff;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="custom-col">
+    <app-input-search (search)="getClientesBySearch($event)"></app-input-search>
+    <div *ngIf="clients.length === 0; else showListClient">
+      <app-empty-content></app-empty-content>
+    </div>
+    <ng-template #showListClient>
+      <div *ngFor="let client of clients">
+        <app-card-client [client]="client"></app-card-client>
+      </div>
+    </ng-template>
+    <app-pagination
+      (onPerPage)="getClientesByPerPage($event)"
+      [registersPerPage]="perPage"
+      [currentPage]="currentPage"
+      [totalCountOfRegisters]="totalCountOfRegisters"
+      (onPageChange)="getClientesByCurrentPage($event)"
+    ></app-pagination>
+  </div>
+</div>

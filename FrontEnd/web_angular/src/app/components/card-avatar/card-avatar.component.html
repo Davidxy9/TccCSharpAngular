@@ -1,0 +1,16 @@
+<div class="bg-info rounded-circle card-avatar" [class]="classPlus">
+  <img
+    [src]="urlAvatar"
+    alt="altAvatar"
+    class="rounded-circle"
+    [class]="classPlus"
+    *ngIf="client?.avatar; else showName"
+  />
+  <ng-template #showName>
+    <div>
+      <h5 data-testid="abbreviation-text-name-avatar">
+        {{ nameAbbreviation }}
+      </h5>
+    </div>
+  </ng-template>
+</div>

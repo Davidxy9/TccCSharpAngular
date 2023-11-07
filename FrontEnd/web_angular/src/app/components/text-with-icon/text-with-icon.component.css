@@ -1,0 +1,24 @@
+.container-text-card-details-icons {
+  display: flex;
+  align-items: center;
+}
+
+.container-text-card-details-icons i {
+  margin-right: 1.06em;
+}
+
+div span + span,
+div span {
+  font-style: normal;
+  font-size: 0.87em;
+  line-height: 150%;
+  color: #eeeef2;
+}
+
+div span {
+  font-weight: 700;
+}
+
+div span + span {
+  font-weight: 500;
+}

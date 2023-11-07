@@ -1,0 +1,11 @@
+li > div {
+  background-color: #2d3748;
+  color: #eeeef2;
+}
+
+.page-link.active,
+.active > .page-link {
+  color: var(--bs-pagination-active-color) !important;
+  background-color: var(--bs-pagination-active-bg) !important;
+  border-color: var(--bs-pagination-active-border-color) !important;
+}

@@ -1,0 +1,9 @@
+@media screen and (max-width: 1024px) {
+  .custom-input-container {
+    width: 100% !important;
+  }
+
+  .custom-input-container {
+    margin-top: 1em !important;
+  }
+}

@@ -1,0 +1,15 @@
+div span + span,
+div span {
+  font-style: normal;
+  font-size: 0.87em;
+  line-height: 150%;
+  color: #eeeef2;
+}
+
+div span {
+  font-weight: 700;
+}
+
+div span + span {
+  font-weight: 500;
+}

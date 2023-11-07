@@ -1,0 +1,49 @@
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.container-customer-type-card {
+  width: 12.44em;
+  height: 5em;
+  background: #0d6efd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.62em;
+  margin-left: 2.44em;
+}
+
+.container-customer-type-card > div > label {
+  font-weight: 400;
+  font-size: 0.75em;
+  line-height: 1.12em;
+  color: #eeeef2;
+}
+
+.general-data-container {
+  display: flex;
+  margin: 1.31em 5.37em auto 5.37em;
+}
+
+.general-data-container app-input:not(:last-child) {
+  margin-right: 1.81em;
+}
+
+@media screen and (max-width: 1024px) {
+  .general-data-container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .general-data-container app-input:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .avatar-container {
+    margin-bottom: 1.5em !important;
+  }
+}

@@ -1,0 +1,54 @@
+<app-card-registration
+  [stepsToRelease]="stepsToRelease"
+  [percentageOfPhases]="percentageOfPhases"
+  (setStageThatIs)="setStageThatIs($event)"
+  (setPercentageOfPhases)="setPercentageOfPhases($event)"
+>
+  <div
+    class="content-registration"
+    *ngIf="stageThatIs === 0 || stageThatIs === 1 || stageThatIs === 2"
+  >
+    <div *ngIf="stageThatIs === 0">
+      <app-general-data-inputs
+        [id]="id"
+        [legalPerson]="legalPerson"
+        [fieldValues]="fieldValues"
+        [cpfOrCnpjAreNotRegistered]="cpfOrCnpjAreNotRegistered"
+        (setValue)="onChangeField($event)"
+        (setLegalPerson)="changeLegalPerson($event)"
+        (setCpfOrCnpjAreNotRegistered)="setCpfOrCnpjAreNotRegistered($event)"
+      >
+      </app-general-data-inputs>
+    </div>
+    <div *ngIf="stageThatIs === 1">
+      <app-form-address
+        [fieldValues]="fieldValues"
+        (setValue)="onChangeField($event)"
+      ></app-form-address>
+    </div>
+    <div *ngIf="stageThatIs === 2">
+      <app-form-contacts
+        [fieldValues]="fieldValues"
+        (setValue)="onChangeField($event)"
+        [valuesGroup]="valuesGroup"
+        (setValuesGroup)="setValuesGroup($event)"
+      >
+      </app-form-contacts>
+    </div>
+    <app-advance-footer
+      [stageThatIs]="stageThatIs"
+      [stepsToRelease]="stepsToRelease"
+      (setStageThatIs)="setStageThatIs($event)"
+      (setPercentageOfPhases)="setPercentageOfPhases($event)"
+    >
+    </app-advance-footer>
+  </div>
+  <div *ngIf="stageThatIs === 3" class="content-data-review">
+    <app-data-review
+      [fieldValues]="fieldValues"
+      (setValue)="onChangeField($event)"
+      (onClickButtonSave)="handleSubmitRegisterCustomer()"
+    >
+    </app-data-review>
+  </div>
+</app-card-registration>

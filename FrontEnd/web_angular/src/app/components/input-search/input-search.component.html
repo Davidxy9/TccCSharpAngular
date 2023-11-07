@@ -1,0 +1,15 @@
+<form [formGroup]="checkoutForm" class="container-search">
+  <input
+    type="text"
+    placeholder="Digite o nome do cliente"
+    class="custom-input"
+    formControlName="valueInput"
+  />
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    (click)="searchClients()"
+  >
+    Procurar
+  </button>
+</form>

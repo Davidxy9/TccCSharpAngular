@@ -1,0 +1,17 @@
+.container-footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 1.94em;
+}
+
+.container-footer button {
+  background: #2c8455;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.container-footer button :hover {
+  background: #2c8455;
+  color: #ffffff;
+}

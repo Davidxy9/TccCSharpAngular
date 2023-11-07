@@ -1,0 +1,53 @@
+<div class="avatar-container" [style]="{ marginBottom: '3.69em' }">
+</div>
+<div class="container-form-contacts">
+  <app-input
+    id="email field"
+    label="E-mail"
+    name="email"
+    typeInput="email"
+    [value]="fieldValues"
+    width="20.43em"
+    placeholder="example@example.com"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+
+  <div class="container-contacts-fones">
+    <div *ngFor="let item of data">
+      <div class="container-telephone-group" id="duplicater">
+        <div class="mb-3">
+          <app-input
+            [id]="item.names.contactNumber"
+            [name]="item.names.contactNumber"
+            [value]="item.value"
+            label="Nome"
+            name="email"
+            typeInput="email"
+            placeholder="Nome"
+            (setValue)="onChangeFieldValuesGroup($event)"
+          ></app-input>
+        </div>
+        <div>
+          <app-input
+            [id]="item.names.contactNumber"
+            [name]="item.names.contactNumber"
+            [value]="item.value"
+            placeholder="(00) 0.0000-0000"
+            label="Fone"
+            [formatValue]="true"
+            [mask]="phoneMask"
+            (setValue)="onChangeFieldValuesGroup($event)"
+          ></app-input>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="button-plus-custom rounded-circle"
+    (click)="addMoreInputGroup()"
+  >
+    <i class="bi bi-plus-square"></i>
+  </button>
+</div>

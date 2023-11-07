@@ -1,0 +1,17 @@
+.container-card-details {
+  width: 100%;
+  background: #171923;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: row;
+  padding: 0.68em 1em;
+}
+
+/* .container-text-card-details-icons {
+  display: flex;
+  align-items: center;
+}
+
+.container-text-card-details-icons i {
+  margin-right: 1.06em;
+} */

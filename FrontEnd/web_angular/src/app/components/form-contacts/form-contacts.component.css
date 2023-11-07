@@ -1,0 +1,65 @@
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.general-data-container {
+  display: flex;
+  margin: 1.31em 5.37em auto 5.37em;
+}
+
+.general-data-container app-input:not(:last-child) {
+  margin-right: 1.81em;
+}
+
+.container-contacts-fones {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-plus-custom {
+  width: 3em;
+  height: 3em;
+  padding: 0.94em;
+  border: none;
+  background-color: #0d6efd;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0 0 1.5rem;
+}
+
+.container-form-contacts {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-form-contacts .custom-input-container {
+  margin-top: 0 !important;
+}
+
+.container-telephone-group {
+  margin-left: 1.81em;
+}
+
+@media screen and (max-width: 1024px) {
+  .general-data-container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .general-data-container app-input:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .avatar-container {
+    margin-bottom: 1.5em !important;
+  }
+
+  .container-telephone-group {
+    margin-left: 0;
+  }
+}

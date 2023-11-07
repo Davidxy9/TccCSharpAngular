@@ -1,0 +1,49 @@
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.general-data-container {
+  display: flex;
+  margin: 1.31em 5.37em auto 5.37em;
+}
+
+.general-data-container app-input:not(:last-child) {
+  margin-right: 1.81em;
+}
+
+.content-data-review {
+  width: 60%;
+}
+
+@media screen and (max-width: 618px) {
+  .content-data-review {
+    width: 100%;
+    /* font-size: 80%; */
+  }
+  .content-registration {
+    font-size: 80%;
+  }
+}
+@media screen and (min-width: 618px) and (max-width: 1024px) {
+  .content-data-review {
+    width: 68%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .general-data-container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .general-data-container app-input:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .avatar-container {
+    margin-bottom: 1.5em !important;
+  }
+}

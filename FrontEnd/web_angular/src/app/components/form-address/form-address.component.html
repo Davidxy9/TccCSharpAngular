@@ -1,0 +1,96 @@
+<div class="avatar-container" [style]="{ marginBottom: '3.69em' }">
+</div>
+<div class="general-data-container">
+  <app-input
+    id="cep field"
+    label="CEP"
+    name="cep"
+    [value]="fieldValues"
+    width="7.30em"
+    placeholder="00000-000"
+    (setValue)="onChangeField($event)"
+    [formatValue]="true"
+    [mask]="cepMask"
+    [onBlur]="lookUpAddress"
+  ></app-input>
+
+  <app-input
+    id="full name field"
+    label="Endereço"
+    name="address"
+    [value]="fieldValues"
+    width="25.37em"
+    placeholder="Digite o endereço"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+
+  <app-input
+    id="address number field"
+    label="Número"
+    name="number"
+    [value]="fieldValues"
+    width="7.62em"
+    placeholder="S/N"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+
+  <app-input
+    id="district field"
+    label="Bairro"
+    name="district"
+    [value]="fieldValues"
+    width="15em"
+    placeholder="Digite o bairro"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+</div>
+
+<div class="general-data-container">
+  <app-input
+    id="city field"
+    label="Cidade"
+    name="city"
+    [value]="fieldValues"
+    width="11.81em"
+    placeholder="Digite a cidade"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+  <app-input
+    id="state field"
+    label="Estado"
+    name="state"
+    [value]="fieldValues"
+    width="15.56em"
+    placeholder="Digite o estado"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+  <app-input
+    id="state registration field"
+    label="Codigo Ibge"
+    name="ibgeCode"
+    [value]="fieldValues"
+    width="8.25em"
+    placeholder="Digite o codigo ibge"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+  <app-input
+    id="complement field"
+    label="Complemento"
+    name="complement"
+    [value]="fieldValues"
+    width="19.68em"
+    placeholder="Casa, apartamento n°"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+</div>
+<div class="general-data-container">
+  <app-input
+    id="referencePoint field"
+    label="Ponto de referencia"
+    name="referencePoint"
+    [value]="fieldValues"
+    width="27.31em"
+    placeholder="Digite o ponto de referencia"
+    (setValue)="onChangeField($event)"
+  ></app-input>
+</div>

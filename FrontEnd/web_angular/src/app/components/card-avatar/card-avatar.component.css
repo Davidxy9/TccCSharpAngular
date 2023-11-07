@@ -1,0 +1,34 @@
+.card-avatar {
+  width: 3.8em;
+  height: 3.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.88em;
+}
+
+.card-avatar-details {
+  width: 7em;
+  height: 7em;
+  margin-right: unset;
+}
+
+.card-avatar-details > img,
+.card-avatar-details > div {
+  width: 7em !important;
+  height: 7em !important;
+}
+
+.card-avatar > img,
+.card-avatar > div {
+  width: 3.8em;
+  height: 3.8em;
+}
+
+.card-avatar > div > h5 {
+  display: flex;
+  width: 3em;
+  height: 3em;
+  align-items: center;
+  justify-content: center;
+}

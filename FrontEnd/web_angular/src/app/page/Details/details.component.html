@@ -1,0 +1,48 @@
+<div class="container-details">
+  <div class="content-details">
+    <div class="container-avatar-details">
+      <span>{{ customerData.cod }} - {{ customerData.name }} </span>
+    </div>
+    <div class="container-details-card">
+      <div class="container-buttons-details">
+        <button class="button-edit">
+          <a
+            class="card-container"
+            routerLink="/atualizacao/{{ idClient }}"
+            data-testid="card-client-id"
+          >
+            <i
+              class="bi bi-pencil-square"
+              [style]="{ marginRight: '1.12em' }"
+            ></i>
+            Editar
+          </a>
+        </button>
+        <button
+          class="button-delete"
+          data-bs-target="#modalDeleteCustomer"
+          data-bs-toggle="modal"
+          (click)="openModalDelete()"
+        >
+          <i class="bi bi-trash" [style]="{ marginRight: '1.12em' }"></i>
+          Excluir
+        </button>
+      </div>
+      <div class="content-cards-infos">
+        <app-customer-information [fieldValues]="customerData">
+        </app-customer-information>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal
+  [modalCall]="modalCall"
+  id="2"
+  title="Atenção"
+  [showButtonDelete]="true"
+>
+  <span class="modal-customer-span">
+    Deseja deletar o cliente {{ customerData.name }}
+  </span>
+</app-modal>

@@ -1,0 +1,86 @@
+<div class="custom-container-pagination container">
+  <div *ngIf="lastPage !== 0 else showNoRegistry">
+    <strong>
+      {{ currentPage * registersPerPage - registersPerPage + 1 }}
+    </strong>
+    -
+    <strong>
+      {{
+        currentPage === lastPage
+          ? totalCountOfRegisters
+          : registersPerPage * currentPage
+      }}
+    </strong>
+    de <strong>{{ totalCountOfRegisters }}</strong> itens
+  </div>
+  <ng-template #showNoRegistry>
+    <div>
+      <strong>0</strong> - <strong>0</strong> de
+      <strong>{{ totalCountOfRegisters }}</strong> itens
+    </div>
+  </ng-template>
+
+  <nav aria-label="Page navigation home">
+    <ul class="pagination">
+      <li class="page-item" *ngIf="currentPage !== 1">
+        <div class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </div>
+      </li>
+      <div *ngIf="currentPage > 1 + siblingsCount">
+        <app-pagination-item
+          (onPageChange)="onPage($event)"
+          [content]="1"
+        ></app-pagination-item>
+        <div *ngIf="currentPage > 2 + siblingsCount">
+          <app-pagination-item
+            (onPageChange)="onPage($event)"
+            content="..."
+          ></app-pagination-item>
+        </div>
+      </div>
+
+      <div *ngIf="previousPage.length > 0">
+        <div *ngFor="let page of previousPage">
+          <app-pagination-item (onPageChange)="onPage($event)" [content]="page">
+          </app-pagination-item>
+        </div>
+      </div>
+
+     
+
+      <div *ngIf="nextPage.length > 0">
+        <div *ngFor="let page of nextPage">
+          <app-pagination-item
+            (onPageChange)="onPage($event)"
+            [content]="page"
+          ></app-pagination-item>
+        </div>
+      </div>
+
+      <div *ngIf="currentPage + siblingsCount < lastPage">
+        <div *ngIf="currentPage + 1 + siblingsCount < lastPage">
+          <app-pagination-item
+            (onPageChange)="onPage($event)"
+            content="..."
+          ></app-pagination-item>
+        </div>
+        <app-pagination-item
+          (onPageChange)="onPage($event)"
+          [content]="lastPage"
+        ></app-pagination-item>
+      </div>
+
+      <div *ngIf="currentPage !== lastPage && lastPage !== 0">
+        <li class="page-item">
+          <div class="page-link" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </nav>
+  <app-pagination-select
+    (onPerPage)="onPerPageChange($event)"
+  ></app-pagination-select>
+</div>

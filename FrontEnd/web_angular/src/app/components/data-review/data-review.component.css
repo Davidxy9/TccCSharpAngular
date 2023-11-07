@@ -1,0 +1,52 @@
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.button-container {
+  width: 100%;
+  background: #d9d9d9;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0.68em 1em;
+
+  color: #0d6efd;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.87em;
+  line-height: 150%;
+  border: none;
+}
+
+.button-container i {
+  font-size: 1.62em;
+}
+
+.button-save {
+  background: #0d6efd;
+  color: #d9d9d9;
+  margin-top: 2.19em;
+  font-weight: 300;
+  font-size: 1.25em;
+}
+
+.button-save i {
+  font-size: 1.25em;
+}
+
+@media screen and (max-width: 618px) {
+  .content-data-review {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .avatar-container {
+    margin-bottom: 1.5em !important;
+  }
+}

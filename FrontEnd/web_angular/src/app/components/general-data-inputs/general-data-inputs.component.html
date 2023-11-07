@@ -1,0 +1,113 @@
+<div class="avatar-container" [style]="{ marginBottom: '2.75em' }">
+  <div class="container-customer-type-card">
+    <div class="form-check">
+      <input
+        [checked]="!legalPerson"
+        (input)="onChangeNotLegalPerson($event)"
+        class="form-check-input"
+        type="radio"
+        name="flexRadioDefault"
+        id="flexRadioDefault1"
+      />
+      <label htmlFor="flexRadioDefault1">Pessoa Física</label>
+    </div>
+    <div class="form-check">
+      <input
+        [checked]="legalPerson"
+        (input)="onChangeLegalPerson($event)"
+        class="form-check-input"
+        type="radio"
+        name="flexRadioDefault"
+        id="flexRadioDefault2"
+      />
+      <label htmlFor="flexRadioDefault2">Pessoa Jurídica</label>
+    </div>
+  </div>
+</div>
+
+<div class="general-data-container" *ngIf="legalPerson; else notLegalPerson">
+  <app-input
+    [id]="idInputCnpj"
+    [label]="labelInputCnpj"
+    [name]="nameCnpj"
+    [value]="fieldValues"
+    width="13.12em"
+    [formatValue]="true"
+    [placeholder]="placeholderCnpj"
+    [mask]="maskCnpj"
+    [onBlur]="checkIfCnpjOrCpfIsRegistered"
+    (setValue)="onChangeField($event)"
+  >
+  </app-input>
+  <app-input
+    id="full name field"
+    label="Nome completo"
+    name="name"
+    [value]="fieldValues"
+    width="22.25em"
+    placeholder="Digite o nome completo"
+    (setValue)="onChangeField($event)"
+  >
+  </app-input>
+  <app-input
+    [id]="idRegistration"
+    [label]="labelRegistration"
+    [name]="nameRegistration"
+    [value]="fieldValues"
+    width="10.87em"
+    [formatValue]="true"
+    placeholder="00000000-0"
+    [mask]="stateRegistrationMask"
+    (setValue)="onChangeField($event)"
+  >
+  </app-input>
+</div>
+<ng-template #notLegalPerson>
+  <div class="general-data-container">
+    <app-input
+      [id]="idInputCpf"
+      [label]="labelInputCpf"
+      [name]="nameCpf"
+      [value]="fieldValues"
+      width="13.12em"
+      [formatValue]="true"
+      [placeholder]="placeholderCpf"
+      [mask]="maskCpf"
+      [onBlur]="checkIfCnpjOrCpfIsRegistered"
+      (setValue)="onChangeField($event)"
+    >
+    </app-input>
+    <app-input
+      id="full name field"
+      label="Nome completo"
+      name="name"
+      [value]="fieldValues"
+      width="22.25em"
+      placeholder="Digite o nome completo"
+      (setValue)="onChangeField($event)"
+    >
+    </app-input>
+    <app-input
+      [id]="idRg"
+      [label]="labelRg"
+      [name]="nameRg"
+      [value]="fieldValues"
+      width="10.87em"
+      [formatValue]="true"
+      placeholder="00000000-0"
+      [mask]="stateRegistrationMask"
+      (setValue)="onChangeField($event)"
+    >
+    </app-input>
+    <app-input
+      id="birthday field"
+      label="Aniversário"
+      typeInput="date"
+      name="birthday"
+      [value]="fieldValues"
+      width="10.87em"
+      placeholder="Escolha a data"
+      (setValue)="onChangeField($event)"
+    ></app-input>
+  </div>
+</ng-template>

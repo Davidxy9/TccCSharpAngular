@@ -1,0 +1,30 @@
+.custom-container-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4.25em 0;
+}
+
+.custom-container-pagination > nav {
+  margin: 0 0.5em;
+}
+
+.pagination {
+  margin: 0;
+}
+
+li > div {
+  background-color: #2d3748;
+  color: #eeeef2;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-container-pagination {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+
+  .custom-container-pagination > nav {
+    margin: 0.5em;
+  }
+}

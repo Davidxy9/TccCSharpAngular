@@ -1,0 +1,27 @@
+<div class="container container-card-registration">
+  <div class="steps">
+    <progress
+      class="container"
+      id="progress"
+      [value]="percentageOfPhases"
+      max="100"
+    ></progress>
+    <div class="step-item">
+      <button class="step-button done"></button>
+      <div class="step-title">Dados gerais</div>
+    </div>
+    <div class="step-item">
+      <button class="step-button"></button>
+      <div class="step-title">Endereço</div>
+    </div>
+    <div class="step-item">
+      <button class="step-button"></button>
+      <div class="step-title">Contatos</div>
+    </div>
+    <div class="step-item">
+      <button class="step-button"></button>
+      <div class="step-title">Revisão dados</div>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

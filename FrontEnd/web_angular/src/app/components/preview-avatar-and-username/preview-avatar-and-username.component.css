@@ -1,0 +1,23 @@
+.container-preview-avatar-and-username {
+  width: 22em;
+  height: 5.56em;
+
+  background: #171923;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4.37em;
+}
+
+.container-preview-avatar-and-username label {
+  margin-top: 0.75em;
+}
+
+@media screen and (max-width: 618px) {
+  .container-preview-avatar-and-username {
+    margin-top: 2.5em;
+    width: calc(80vw - 5em);
+  }
+}

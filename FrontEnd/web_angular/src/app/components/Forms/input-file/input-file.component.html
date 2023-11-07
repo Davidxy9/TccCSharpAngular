@@ -1,0 +1,55 @@
+<div
+  [class]="
+    overwriteStyle
+      ? 'container-upload-file container-upload-file-preview'
+      : 'container-upload-file'
+  "
+  *ngIf="isSending"
+>
+  <label>
+    <div>Uploading</div>
+    <div class="progress">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Basic example"
+        [attr.aria-valuenow]="progress"
+        [style]="styleInputProgress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+  </label>
+</div>
+<div
+  [class]="
+    overwriteStyle
+      ? 'container-upload-file container-upload-file-preview avatar-client-profile'
+      : 'container-upload-file avatar-client-profile'
+  "
+  *ngIf="fieldValues.avatar !== ''"
+>
+  <i class="bi bi-trash custom-icon" (click)="clearAvatar()"></i>
+  <img [src]="urlImage" alt="avatar cliente" />
+</div>
+<div
+  [class]="
+    overwriteStyle
+      ? 'container-upload-file container-upload-file-preview'
+      : 'container-upload-file'
+  "
+  *ngIf="fieldValues.avatar === '' && !isSending"
+>
+  <label>
+    <i class="bi bi-plus-lg"></i>
+    <div>Upload</div>
+    <input
+      id="avatar"
+      name="avatar"
+      class="file-upload"
+      (input)="handleImageUpload($event)"
+      type="file"
+      accept="image/*"
+    />
+  </label>
+</div>

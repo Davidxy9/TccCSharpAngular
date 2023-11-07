@@ -1,0 +1,26 @@
+<a
+  class="card-container"
+  routerLink="/detalhes/{{ client.id }}"
+  data-testid="card-client-id"
+>
+  <div style="width: 100%">
+    <div class="space-fields">
+      <app-card-field [field]="'Cod:'" [value]="client.id"></app-card-field>
+
+      <app-card-field
+        [field]="'Cnpj:'"
+        [value]="client.cnpj"
+        *ngIf="isCNPJ; else showCpf"
+      ></app-card-field>
+
+      <ng-template #showCpf>
+        <app-card-field [field]="'Cpf:'" [value]="client.cpf"></app-card-field>
+      </ng-template>
+    </div>
+    <app-card-field [field]="'Nome:'" [value]="client.name"></app-card-field>
+
+    <div>
+      <app-card-field [field]="'Endereço:'" [value]="Address"></app-card-field>
+    </div>
+  </div>
+</a>

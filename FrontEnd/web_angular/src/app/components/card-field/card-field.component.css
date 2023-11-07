@@ -1,0 +1,12 @@
+.custom-field,
+.custom-value {
+  font-size: 0.87em;
+  line-height: 1.31em;
+  letter-spacing: 0em;
+  text-align: left;
+  font-weight: 400;
+}
+
+.custom-field {
+  font-weight: 700;
+}

@@ -1,0 +1,14 @@
+<div
+  data-testid="card-details"
+  class="container-card-details"
+  [style]="styleContainer"
+>
+  <div *ngIf="showOnlyOneIcon">
+    <i
+      data-testid="card-details-icon"
+      [class]="iconName"
+      [style]="{ fontSize: '30px', marginRight: '1.06em' }"
+    ></i>
+  </div>
+  <ng-content></ng-content>
+</div>

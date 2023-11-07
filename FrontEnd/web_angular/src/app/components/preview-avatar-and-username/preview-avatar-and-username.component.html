@@ -1,0 +1,8 @@
+<div class="container-preview-avatar-and-username">
+  <app-input-file
+    [overwriteStyle]="true"
+    [fieldValues]="fieldValues"
+    (setValue)="onChangeField($event)"
+  ></app-input-file>
+  <label>{{ fieldValues.name || "Nome não informado" }}</label>
+</div>

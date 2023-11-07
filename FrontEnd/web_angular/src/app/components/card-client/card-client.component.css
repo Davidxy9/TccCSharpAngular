@@ -1,0 +1,18 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  background: #1f2029;
+  margin-bottom: 1.06em;
+  padding: 1.12em;
+  border-radius: 4px;
+}
+
+.card-container > div + div {
+  width: 100%;
+}
+
+.space-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

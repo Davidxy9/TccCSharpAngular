@@ -1,0 +1,11 @@
+.custom-container-empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+}
+
+.custom-container-empty-content > span {
+  margin-top: 0.5em;
+  font-weight: 500;
+}

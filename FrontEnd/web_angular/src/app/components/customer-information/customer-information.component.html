@@ -1,0 +1,96 @@
+<div class="container-data-review mb-4">
+  <app-card-details
+    [showOnlyOneIcon]="true"
+    uniqueNameIcons="bi-person-badge"
+    [distanceFromTheRight]="fieldValues.rg !== ''"
+    style="width: 100%"
+  >
+    <div>
+      <app-text
+        [title]="fieldValues.cnpj && fieldValues.cnpj !== '' ? 'CNPJ' : 'CPF'"
+        [content]="
+          fieldValues.cnpj && fieldValues.cnpj !== ''
+            ? fieldValues.cnpj
+            : fieldValues.cpf
+        "
+      >
+      </app-text>
+      <app-text
+        *ngIf="fieldValues.rg === ''"
+        title="Inscrição estadual"
+        [content]="fieldValues.stateRegistration"
+      ></app-text>
+    </div>
+  </app-card-details>
+
+  <app-card-details *ngIf="fieldValues.rg !== ''" style="width: 100%">
+    <div>
+      <app-text-with-icon
+        title="RG"
+        [content]="fieldValues.rg"
+        icon="bi-person-bounding-box"
+      >
+      </app-text-with-icon>
+
+      <app-text-with-icon
+        title="Aniversário"
+        [content]="contentBirthday"
+        icon="bi-balloon"
+      >
+      </app-text-with-icon>
+    </div>
+  </app-card-details>
+</div>
+
+<app-card-details
+  [showOnlyOneIcon]="true"
+  uniqueNameIcons="bi-pin-map-fill"
+  style="width: 100%"
+>
+  <div>
+    <app-text title="Endereço" [content]="contentAddress"></app-text>
+    <app-text title="Complemento" [content]="fieldValues.complement"></app-text>
+    <app-text
+      title="Ponto de referencia"
+      [content]="fieldValues.referencePoint"
+    ></app-text>
+    <app-text title="Codigo Ibge" [content]="fieldValues.ibgeCode"></app-text>
+  </div>
+</app-card-details>
+
+<div class="container-data-review mt-4">
+  <app-card-details [style]="{ marginRight: '2.81em', width: '100%' }">
+    <app-text-with-icon
+      title="E-mail"
+      [content]="fieldValues.email"
+      icon="bi-envelope"
+    >
+    </app-text-with-icon>
+  </app-card-details>
+  <button
+    id="#myModal"
+    class="button-container"
+    data-bs-target="#myModal"
+    data-bs-toggle="modal"
+    (click)="onClickModal()"
+  >
+    <i class="bi bi-telephone" [style]="{ marginRight: '1.12em' }"></i>
+    Fones
+  </button>
+  <app-modal
+    [modalCall]="modalCall"
+    id="teste1"
+    title="Telefones"
+    [showButtonFone]="true"
+  >
+    <div *ngFor="let phone of fieldValues.phones">
+      <ul>
+        <li>
+          contato: {{ phone.contact }}
+          <br />
+          fone: {{ phone.phone }}
+        </li>
+      </ul>
+    </div>
+  </app-modal>
+</div>
