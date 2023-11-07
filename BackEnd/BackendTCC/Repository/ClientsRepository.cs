@@ -22,5 +22,11 @@ namespace BackendTCC.Repository
         {
             return await Get().Include(x => x.Phones).ToListAsync();
         }
+
+        public async Task<IEnumerable<Clients>> GetClientsByName(string search)
+        {
+            return await Get().Where(c => c.Name.ToLower().Contains(search.ToLower())).OrderBy(c => c.Id).ToListAsync();
+        }
+
     }
 }

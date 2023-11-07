@@ -55,6 +55,20 @@ namespace BackendTCC.Controllers
             return clientsDto;
         }
 
+        [HttpGet("search/{search}", Name = "GetClientByName")]
+        public async Task<ActionResult<IEnumerable<ClientDTO>>> GetClientsByName(string search)
+        {
+            var client = await _context.ClientsRepository
+                             .GetClientsByName(search);
+
+            if (client == null)
+            {
+                return NotFound();
+            }
+            var clientDto = _mapper.Map<List<ClientDTO>>(client);
+            return clientDto;
+        }
+
         [HttpGet("{id}", Name = "GetClient")]
         public async Task<ActionResult<ClientDTO>> Get(int id)
         {

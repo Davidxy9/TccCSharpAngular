@@ -7,6 +7,8 @@ public interface IClientsRepository :IRepository<Clients>
 {
     Task<PagedList<Clients>> GetClients(ClientsParameters clientsParameters);
     Task<IEnumerable<Clients>> GetClientsPhones();
+
+    Task<IEnumerable<Clients>> GetClientsByName(string search);
 }
 
 
