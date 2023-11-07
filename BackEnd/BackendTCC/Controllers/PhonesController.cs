@@ -43,6 +43,20 @@ namespace BackendTCC.Controllers
             return phoneDto;
         }
 
+        [HttpGet("/clients/{id}")]
+        public async Task<ActionResult<IEnumerable<PhoneDTO>>> GetPhonesForClientId(int id)
+        {
+            var phone = await _context.PhonesRepository.GetPhonesForClientId(id);
+
+            if (phone == null)
+            {
+                return NotFound();
+            }
+
+            var phoneDto = _mapper.Map<List<PhoneDTO>>(phone);
+            return phoneDto;
+        }
+
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] PhoneDTO phoneDto)
         {

@@ -1,6 +1,4 @@
-﻿using BackendTCC.Repository;
-
-namespace BackendTCC.Repository
+﻿namespace BackendTCC.Repository
 {
     public interface IUnitOfWork
     {

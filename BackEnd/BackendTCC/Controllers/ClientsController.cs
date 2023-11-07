@@ -69,11 +69,25 @@ namespace BackendTCC.Controllers
             return clientDto;
         }
 
+        //[HttpGet("{id}", Name = "GetClient")]
+        //public async Task<ActionResult<ClientDTO>> Get(int id)
+        //{
+        //    var client = await _context.ClientsRepository
+        //                     .GetById(p => p.Id == id);
+
+        //    if (client == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var clientDto = _mapper.Map<ClientDTO>(client);
+        //    return clientDto;
+        //}
+
         [HttpGet("{id}", Name = "GetClient")]
         public async Task<ActionResult<ClientDTO>> Get(int id)
         {
             var client = await _context.ClientsRepository
-                             .GetById(p => p.Id == id);
+                                 .GetByIdWithPhones(p => p.Id == id, p => p.Phones);
 
             if (client == null)
             {
@@ -82,6 +96,7 @@ namespace BackendTCC.Controllers
             var clientDto = _mapper.Map<ClientDTO>(client);
             return clientDto;
         }
+
 
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] ClientDTO clientDto)

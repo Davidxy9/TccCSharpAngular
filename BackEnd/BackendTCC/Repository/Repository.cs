@@ -24,6 +24,17 @@ namespace BackendTCC.Repository
             return await _context.Set<T>().AsNoTracking().SingleOrDefaultAsync(predicate);
         }
 
+        public async Task<T> GetByIdWithPhones(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
+        {
+            var query = _context.Set<T>().AsNoTracking();
+            foreach (var includeProperty in includeProperties)
+            {
+                query = query.Include(includeProperty);
+            }
+            return await query.SingleOrDefaultAsync(predicate);
+        }
+
+
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
