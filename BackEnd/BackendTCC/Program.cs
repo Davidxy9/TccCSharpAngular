@@ -11,7 +11,6 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container. // => ConfigureServices
 builder.Services.AddControllers()
       .AddJsonOptions(options =>
          options.JsonSerializerOptions
@@ -30,11 +29,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
-//JWT
-//adiciona o manipulador de autenticacao e define o 
-//esquema de autenticacao usado : Bearer
-//valida o emissor, a audiencia e a chave
-//usando a chave secreta valida a assinatura
+// TO DO: Implementar a autorização
 builder.Services.AddAuthentication(
     JwtBearerDefaults.AuthenticationScheme).
     AddJwtBearer(options =>
@@ -60,15 +55,6 @@ var mappingConfig = new MapperConfiguration(mc =>
 IMapper mapper = mappingConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
-////definir politica cors via atributo
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("PermitirApiRequest",
-//        builder =>
-//        builder.WithOrigins("https://wwwapirequest.io/")
-//     .WithMethods("GET")
-//     );
-//});
 builder.Services.AddCors();
 
 
@@ -86,11 +72,6 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
-//politica CORS restritiva
-//app.UseCors(opt => opt.
-//    WithOrigins("https://wwwapirequest.io/")
-//     .WithMethods("GET"));
 
 app.UseCors(builder =>
     builder.AllowAnyOrigin()
