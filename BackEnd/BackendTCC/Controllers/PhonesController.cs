@@ -20,15 +20,6 @@ namespace BackendTCC.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("client")]
-        public async Task<ActionResult<IEnumerable<PhoneDTO>>> GetPhonesForClientId()
-        {
-            var phones = await _context.PhonesRepository.GetPhonesForClientId();
-            var phonesDto = _mapper.Map<List<PhoneDTO>>(phones);
-
-            return phonesDto;
-        }
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PhoneDTO>>> Get()
         {
@@ -38,7 +29,6 @@ namespace BackendTCC.Controllers
             return phonesDto;
         }
 
-        // api/produtos/1
         [HttpGet("{id}", Name = "GetPhone")]
         public async Task<ActionResult<PhoneDTO>> Get(int id)
         {
@@ -53,22 +43,6 @@ namespace BackendTCC.Controllers
             return phoneDto;
         }
 
-        //  api/produtos
-        [HttpPost]
-        public async Task<ActionResult> Post([FromBody] PhoneDTO phoneDto)
-        {
-            var phone = _mapper.Map<Phones>(phoneDto);
-
-            _context.PhonesRepository.Add(phone);
-            await _context.Commit();
-
-            var phoneDTO = _mapper.Map<PhoneDTO>(phone);
-
-            return new CreatedAtRouteResult("GetPhone",
-               new { id = phone.Id }, phoneDTO);
-        }
-
-        // api/produtos/1
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] PhoneDTO phoneDto)
         {

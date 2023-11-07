@@ -9,8 +9,6 @@ public class Clients
     [Key]
     public int Id { get; set; }
 
-    public int Cod { get; set; }
-
     [Required]
     [StringLength(100)]
     public string? Name { get; set; }

@@ -4,8 +4,6 @@
     {
         public int Id { get; set; }
 
-        public int Cod { get; set; }
-
         public string? Name { get; set; }
 
         public string? Avatar { get; set; }

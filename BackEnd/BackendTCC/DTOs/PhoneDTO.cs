@@ -6,6 +6,6 @@
 
         public string? ContactNumber { get; set; }
 
-        public string? ClientId { get; set; }
+        public int ClientsId { get; set; }
     }
 }
