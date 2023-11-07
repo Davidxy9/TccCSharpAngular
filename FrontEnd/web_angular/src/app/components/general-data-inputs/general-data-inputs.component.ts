@@ -10,6 +10,7 @@ import Masks from 'src/app/utils/masks';
 export class GeneralDataInputsComponent implements OnInit {
   @Output() setValue = new EventEmitter();
   @Input() legalPerson: boolean = true;
+  @Input() isUpdate: boolean = false;
   @Output() setLegalPerson = new EventEmitter();
   @Input() fieldValues: any = {};
   @Input() cpfOrCnpjAreNotRegistered: boolean = false;

@@ -6,6 +6,6 @@ namespace BackendTCC.Repository
     public interface IPhonesRepository : IRepository<Phones>
     {
         Task<PagedList<Phones>> GetPhones (PhonesParameters phonesParameters);
-        Task<IEnumerable<Phones>> GetPhonesForClientId();
+        Task<IEnumerable<Phones>> GetPhonesForClientId(int clientId);
     }
 }

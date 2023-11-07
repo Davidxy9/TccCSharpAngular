@@ -17,9 +17,10 @@ namespace BackendTCC.Repository
             phonesParameters.PageNumber, phonesParameters.PageSize);
         }
 
-        public async Task<IEnumerable<Phones>> GetPhonesForClientId()
+        public async Task<IEnumerable<Phones>> GetPhonesForClientId(int clientId)
         {
-            return await Get().OrderBy(c => c.ClientsId).ToListAsync();
+            return await Get().Where(c => c.ClientsId == clientId).OrderBy(c => c.ClientsId).ToListAsync();
         }
+
     }
 }

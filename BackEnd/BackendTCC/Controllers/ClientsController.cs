@@ -86,6 +86,14 @@ namespace BackendTCC.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] ClientDTO clientDto)
         {
+            var existingClient = await _context.ClientsRepository
+                     .GetById(p => p.Id == clientDto.Id);
+
+            if (existingClient != null)
+            {
+                return BadRequest("Cliente já existente!");
+            }
+
             var client = _mapper.Map<Clients>(clientDto);
 
             _context.ClientsRepository.Add(client);

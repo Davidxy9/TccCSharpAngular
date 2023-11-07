@@ -16,6 +16,7 @@ import { isEmpty } from 'rxjs';
 })
 export class RegistrationComponent implements OnInit {
   id!: string | null;
+  isUpdate: boolean = false;
 
   constructor(
     private location: Location,
@@ -70,7 +71,8 @@ export class RegistrationComponent implements OnInit {
     if (id) {
       const storedValue = Utils.getValue('detailsClient');
 
-      if (storedValue?.id === id) {
+      if (storedValue?.id == id) {
+        this.isUpdate = true;
         // @ts-ignore
         this.fieldValues = {
           ...storedValue,
@@ -156,8 +158,7 @@ export class RegistrationComponent implements OnInit {
         this.service.createClient(formatFields).subscribe({
           next: () => this.messageSuccess(true),
           error: (error) => {
-            this.toastr.error('', error?.response?.data?.message),
-            console.log(error)
+            this.toastr.error('', error?.response?.data?.message)
           }
         });
       }
