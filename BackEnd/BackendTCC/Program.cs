@@ -92,7 +92,10 @@ app.UseAuthorization();
 //    WithOrigins("https://wwwapirequest.io/")
 //     .WithMethods("GET"));
 
-app.UseCors(opt => opt.AllowAnyOrigin());
+app.UseCors(builder =>
+    builder.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
 
 app.MapControllers();
 app.Run();

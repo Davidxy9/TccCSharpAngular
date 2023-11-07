@@ -23,7 +23,7 @@ public class Clients
     [StringLength(20)]
     public string? Cpf { get; set; }
 
-    [StringLength(20)]
+    [StringLength(80)]
     public string? StateRegistration { get; set; }
 
     [StringLength(20)]
@@ -31,33 +31,33 @@ public class Clients
 
     public DateTime? Birthday { get; set; }
 
-    [StringLength(20)]
+    [StringLength(200)]
     public string? Complement { get; set; }
 
-    [StringLength(50)]
+    [StringLength(100)]
     public string? Cep { get; set; }
 
-    [StringLength(100)]
+    [StringLength(200)]
     public string? Address { get; set; }
 
-    [StringLength(20)]
+    [StringLength(200)]
     public string? Number { get; set; }
 
-    [StringLength(20)]
+    [StringLength(200)]
     public string? District { get; set; }
 
-    [StringLength(20)]
+    [StringLength(200)]
     public string? City { get; set; }
 
-    [StringLength(20)]
+    [StringLength(200)]
     public string? State { get; set; }
 
     public int? IbgeCode { get; set; }
 
-    [StringLength(20)]
+    [StringLength(200)]
     public string? ReferencePoint { get; set; }
 
-    [StringLength(20)]
+    [StringLength(200)]
     public string? Email { get; set; }
 
     public DateTime CreatedAt { get; set; }
